@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Pesanan - FoodOrder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="halaman-riwayat">
+
+    <header class="navbar">
+        <a href="index.html" class="logo">FoodOrder</a>
+
+        
+<nav class="nav-menu">
+    <a href="index.html#beranda">Beranda</a>
+    <a href="index.html#menu">Menu</a>
+    <a href="index.html#keranjang">Keranjang</a>
+    <a href="index.html#checkout">Checkout</a>
+    <a href="riwayat.html">Riwayat Pesanan</a>
+
+    <span id="nama-pengguna"></span>
+    <button id="btn-logout" class="btn-logout">Logout</button>
+</nav>
+
+
+        <a href="index.html" class="nav-button">Pesan Sekarang</a>
+    </header>
+
+    <main>
+
+        <section class="riwayat-hero">
+            <div>
+                <p class="eyebrow">FOODORDER ACCOUNT</p>
+                <h1>Riwayat <span>Pesanan</span></h1>
+                <p class="hero-description">
+                    Semua pesanan makananmu tersimpan di sini.
+                    Pantau pesanan dan lihat transaksi yang pernah kamu lakukan.
+                </p>
+            </div>
+        </section>
+
+        <section class="riwayat-section">
+
+            <div class="riwayat-heading">
+                <h2>Pesanan Saya</h2>
+                <p>Daftar pesanan yang pernah kamu buat.</p>
+            </div>
+
+            <div id="daftar-riwayat">
+                <p>Memuat riwayat pesanan...</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p><strong>FoodOrder</strong></p>
+        <p>Pesan makanan favoritmu dengan mudah.</p>
+        <p>&copy; 2026 FoodOrder. All Rights Reserved.</p>
+    </footer>
+    
+<script type="module" src="auth.js"></script>
+
+    <script type="module" src="riwayat.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - FoodOrder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+
+    <main class="auth-container">
+        <a href="index.html" class="auth-logo">FoodOrder</a>
+
+        <div class="auth-card">
+            <h1>Buat Akun</h1>
+            <p class="auth-description">
+                Daftar sekarang dan pesan makanan favoritmu dengan mudah.
+            </p>
+
+            <form id="form-register">
+                <label for="nama">Nama lengkap</label>
+                <input
+                    type="text"
+                    id="nama"
+                    placeholder="Masukkan nama lengkap"
+                    autocomplete="name"
+                    required
+                >
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Masukkan email kamu"
+                    autocomplete="email"
+                    required
+                >
+
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Minimal 8 karakter"
+                    minlength="8"
+                    autocomplete="new-password"
+                    required
+                >
+
+                <label for="konfirmasi-password">Konfirmasi password</label>
+                <input
+                    type="password"
+                    id="konfirmasi-password"
+                    placeholder="Masukkan ulang password"
+                    minlength="8"
+                    autocomplete="new-password"
+                    required
+                >
+
+                <button type="submit" class="auth-button">
+                    Daftar Sekarang
+                </button>
+
+                <p id="pesan-auth" class="auth-message" aria-live="polite"></p>
+            </form>
+
+            <p class="auth-switch">
+                Sudah punya akun?
+                <a href="login.html">Login di sini</a>
+            </p>
+
+            <a href="index.html" class="back-link">
+                ← Kembali ke Beranda
+            </a>
+        </div>
+    </main>
+
+    <script type="module" src="auth.js"></script>
+</body>
+</html>

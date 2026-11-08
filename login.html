@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FoodOrder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+
+    <main class="auth-container">
+        <a href="index.html" class="auth-logo">FoodOrder</a>
+
+        <div class="auth-card">
+            <h1>Selamat Datang!</h1>
+            <p class="auth-description">
+                Login untuk melanjutkan pemesanan makanan favoritmu.
+            </p>
+
+            <form id="form-login">
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Masukkan email kamu"
+                    autocomplete="email"
+                    required
+                >
+
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Masukkan password"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <button type="submit" class="auth-button">
+                    Login
+                </button>
+
+                <p id="pesan-auth" class="auth-message" aria-live="polite"></p>
+            </form>
+
+            <p class="auth-switch">
+                Belum punya akun?
+                <a href="register.html">Daftar sekarang</a>
+            </p>
+
+            <a href="index.html" class="back-link">
+                ← Kembali ke Beranda
+            </a>
+        </div>
+    </main>
+
+    <script type="module" src="auth.js"></script>
+</body>
+</html>
