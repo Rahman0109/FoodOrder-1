@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodOrder - Pesan Makanan Favoritmu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <header class="navbar">
+    <a href="#beranda" class="logo">FoodOrder</a>
+
+    <nav class="nav-menu">
+        <a href="#beranda">Beranda</a>
+        <a href="#menu">Menu</a>
+        <a href="#keranjang">Keranjang (<span id="jumlah-keranjang">0</span>)</a>
+        <a href="#checkout">Checkout</a>
+        <a href="riwayat.html">Riwayat Pesanan</a>
+        <a href="#tentang">Tentang Kami</a>
+        <a href="#kontak">Kontak</a>
+        <span id="nama-pengguna"></span>
+        <button id="btn-logout" class="btn-logout">Logout</button>
+    </nav>
+
+    <a href="#menu" class="nav-button">Pesan Sekarang</a>
+</header>
+  <main>
+    <section class="hero" id="beranda">
+      <div class="hero-content">
+        <p class="eyebrow">SELAMAT DATANG DI FOODORDER</p>
+        <h1>Makanan Favoritmu, <span>Lebih Mudah Dipesan.</span></h1>
+        <p class="hero-description">Temukan pilihan makanan yang kamu suka dan pesan dengan cara yang praktis melalui website kami.</p>
+        <a href="#menu" class="primary-button">Lihat Menu</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80" alt="Hidangan makanan segar">
+      </div>
+    </section>
+
+    
+<section class="featured-menu" id="menu">
+    <div class="section-heading">
+        <p class="eyebrow">PILIHAN UNTUKMU</p>
+        <h2>Menu Unggulan</h2>
+        <p>Berikut beberapa contoh menu yang tersedia.</p>
+    </div>
+
+    <div class="menu-list">
+        <article class="menu-card">
+            <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=700&q=80" alt="Nasi dengan lauk">
+            <div class="menu-info">
+                <h3>Nasi Ayam</h3>
+                <p>Menu nasi dengan lauk ayam yang lezat.</p>
+                <span class="price">Rp15.000</span>
+            </div>
+            <button class="btn-tambah" onclick="tambahKeranjang('Nasi Ayam', 15000)">
+                Tambah ke Keranjang
+            </button>
+        </article>
+
+        <article class="menu-card">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80" alt="Burger">
+            <div class="menu-info">
+                <h3>Beef Burger</h3>
+                <p>Roti burger dengan isian daging dan sayuran.</p>
+                <span class="price">Rp20.000</span>
+            </div>
+            <button class="btn-tambah" onclick="tambahKeranjang('Beef Burger', 20000)">
+                Tambah ke Keranjang
+            </button>
+        </article>
+
+        <article class="menu-card">
+            <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80" alt="Mie dalam mangkuk">
+            <div class="menu-info">
+                <h3>Mie Ayam</h3>
+                <p>Mie hangat dengan topping ayam.</p>
+                <span class="price">Rp12.000</span>
+            </div>
+            <button class="btn-tambah" onclick="tambahKeranjang('Mie Ayam', 12000)">
+                Tambah ke Keranjang
+            </button>
+        </article>
+    </div>
+</section>
+
+
+<section id="keranjang" class="cart-section">
+    <div class="cart-header">
+        <h2>Keranjang Pesanan</h2>
+        <p>Periksa kembali makanan yang ingin kamu pesan.</p>
+    </div>
+
+    <div class="cart-content">
+        <div class="cart-items">
+            <h3>Daftar Pesanan</h3>
+
+            <div id="daftar-keranjang">
+                Belum ada pesanan.
+            </div>
+        </div>
+
+        <div class="cart-summary">
+            <h3>Ringkasan Pesanan</h3>
+
+            <div class="cart-total">
+                <span>Total Pembayaran</span>
+                <strong>Rp<span id="total-harga">0</span></strong>
+            </div>
+
+            <button type="button" class="cart-checkout"
+                onclick="document.getElementById('checkout').scrollIntoView({behavior: 'smooth'})">
+                Lanjut ke Checkout
+            </button>
+        </div>
+    </div>
+</section>
+
+<section id="checkout" class="checkout-section">
+    <h2>Checkout Pesanan</h2>
+    <p>Lengkapi data berikut untuk mengonfirmasi pesanan.</p>
+
+    <form id="form-checkout">
+        <label for="nama-pelanggan">Nama lengkap</label>
+        <input type="text" id="nama-pelanggan" placeholder="Masukkan nama lengkap" required>
+
+        <label for="telepon">Nomor telepon</label>
+        <input type="tel" id="telepon" placeholder="Masukkan nomor telepon" required>
+
+        <label for="alamat">Alamat pengantaran</label>
+        <textarea id="alamat" placeholder="Masukkan alamat lengkap" rows="3" required></textarea>
+
+        <label for="metode-pembayaran">Metode pembayaran</label>
+        <select id="metode-pembayaran" required>
+            <option value="">Pilih pembayaran</option>
+            <option value="Tunai">Tunai saat pesanan diterima</option>
+            <option value="Transfer">Transfer (simulasi)</option>
+        </select>
+
+        <button type="submit" class="btn-checkout">
+            Konfirmasi Pesanan
+        </button>
+    </form>
+
+    <div id="hasil-checkout" aria-live="polite"></div>
+</section>
+
+
+    
+<section class="about" id="tentang">
+    <h2>Tentang FoodOrder</h2>
+
+    <p>
+        FoodOrder adalah rancangan website pemesanan makanan
+        yang membantu pelanggan melihat pilihan menu dengan lebih mudah.
+    </p>
+
+    <div class="about-container">
+
+        <div class="about-card">
+            <div class="about-icon">🍽️</div>
+            <h3>1. Pilih Menu</h3>
+            <p>
+                Lihat daftar menu dan pilih makanan yang kamu mau.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <div class="about-icon">🛒</div>
+            <h3>2. Isi Keranjang</h3>
+            <p>
+                Tambahkan makanan ke keranjang dan atur jumlah pesanan sesuai keinginan.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <div class="about-icon">📦</div>
+            <h3>3. Konfirmasi Pesanan</h3>
+            <p>
+                Isi data pengantaran, lalu periksa dan konfirmasi pesanan.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+  </main>
+
+  <footer class="footer" id="kontak">
+    <p><strong>FoodOrder</strong> — Website Pemesanan Makanan</p>
+    <p>kelompok 4 Mata kuliah Rekayasa Perangkat Lunak.</p>
+    <p>kelas Ti25c</p>
+  </footer>
+  <script type="module" src="script.js"></script>
+<script type="module" src="auth.js"></script>
+</body>
+</html>
